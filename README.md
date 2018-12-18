@@ -1,6 +1,4 @@
 # zadanie_rekrutacyjne
-
-Treść:
 Każdego dnia o godzinie 8:00 do hangaru przyjeżdża 1 ciężarówka, które może przewieźć od 5 do
 40 pudeł towaru. Każde pudło może ważyć od 10 do 20kg. Kolejna ciężarówka gabarytowa
 przewozi 2 maszyny rolnicze, ważące 1,5t oraz 2t.
