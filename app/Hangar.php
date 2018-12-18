@@ -32,7 +32,7 @@ class Hangar {
     public function updateStatus($table, $id_min, $id_max, $transport_id) {
         $column_name = ($table == 'boxes') ? 'truck_id' : 'plane_id';
 
-        $query = "UPDATE ".$table." SET `status` = 0, `departure_date` = :departure_date, `".$column_name."` = :".$column_name." WHERE `id` BETWEEN :id_min AND :id_max";
+        $query = "UPDATE $table SET `status` = 0, `departure_date` = :departure_date, `$column_name` = :$column_name WHERE `id` BETWEEN :id_min AND :id_max";
 
         $statement = $this->pdo->prepare($query);
 
@@ -40,7 +40,7 @@ class Hangar {
             ':departure_date' => date('Y-m-d H:i:s', time()),
             ':id_min' => $id_min,
             ':id_max' => $id_max,
-            ':'.$column_name => $transport_id
+            ":$column_name" => $transport_id
         ]);
     }
 
@@ -71,7 +71,7 @@ class Hangar {
 
     // gets items from current load action
     public function getRows($table, $id_min, $id_max) {
-        $query = "SELECT * FROM `".$table."` WHERE `id` BETWEEN '".$id_min."' AND '".$id_max."'";
+        $query = "SELECT * FROM `$table` WHERE `id` BETWEEN '$id_min' AND '$id_max'";
 
         $statement = $this->pdo->prepare($query);
 
